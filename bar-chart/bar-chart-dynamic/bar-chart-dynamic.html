@@ -1,0 +1,15 @@
+<link rel="import" href="../bar-chart-dynamic-ironajax/bar-chart-dynamic-ironajax.html" />
+<dom-module id="bar-chart-dynamic">
+  <template>
+    <!-- <div hidden></div> -->
+
+    <!-- <paper-button on-click="barchartloading">Item</paper-button> -->
+    <div id="chartContainer" onload=barchartloading() style="height: 300px; width: 100;">
+	  </div>
+  <bar-chart-dynamic-ironajax></bar-chart-dynamic-ironajax>
+  </template>
+
+	<script type="text/javascript" src="../../script/canvasjs.min.js"></script>
+    <script src="../bar-chart-dynamicjs/bar-chart-dynamicjs.js"></script>
+
+    </dom-module>

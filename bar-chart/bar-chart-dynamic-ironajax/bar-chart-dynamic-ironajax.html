@@ -1,0 +1,28 @@
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html" />
+<script type="text/javascript" src="../../script/canvasjs.min.js"></script>
+<dom-module id="bar-chart-dynamic-ironajax">
+<template>
+<iron-ajax
+ auto
+ method="get"
+ id="jsoninfo"
+ url="../bar-chart-dynamic-json/bar-chart-dynamic-json.json"
+ params="{{param}}"
+ handle-as="json"
+ content-type="application/json"
+ on-response="jsoninfoResponse"
+ last-response="{{jsondata}}"
+ debounce-duration="300">
+
+</template>
+<script>
+Polymer({
+  is:"bar-chart-dynamic-ironajax",
+jsoninfoResponse:function()
+{
+  var itemm=this.jsondata;
+ document.querySelector("bar-chart-dynamic").barchartloading(itemm);
+}
+});
+</script>
+</dom-module>
